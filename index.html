@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST IQ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <div id="dialog" class="dialog">
+        <p>Lê Anh Tú có đẹp trai không?</p>
+        <button onclick="correctAnswer()">Có</button>
+        <button onclick="askAgain()">Không</button>
+    </div>
+
+    <div id="secondDialog" class="dialog hidden">
+        <p>Chắc chưa?</p>
+        <button onclick="correctAnswer()">Tôi nhầm</button>
+        <button id="moveButton" onmouseover="moveDialog()">Chắc chắn</button>
+    </div>
+
+</body>
+</html>
