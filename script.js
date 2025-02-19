@@ -1,5 +1,6 @@
 function correctAnswer() {
-    alert("Bạn đã trả lời đúng!");
+    alert("Bạn đã trả lời đúng! Chuẩn bị nhận phần thưởng 🎉");
+    window.location.href = "success.html"; // Chuyển sang trang success.html
 }
 
 function askAgain() {
