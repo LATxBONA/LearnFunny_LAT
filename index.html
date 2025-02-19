@@ -2,24 +2,26 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TEST IQ</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
 </head>
 <body>
     <div id="dialog" class="dialog">
         <p>Lê Anh Tú có đẹp trai không?</p>
-        <button onclick="correctAnswer()">Có</button>
-        <button onclick="askAgain()">Không</button>
+        <div class="button-container">
+            <button onclick="correctAnswer()">Có</button>
+            <button onclick="askAgain()">Không</button>
+        </div>
     </div>
 
     <div id="secondDialog" class="dialog hidden">
         <p>Chắc chưa?</p>
-        <button onclick="correctAnswer()">Tôi nhầm</button>
-        <button id="moveButton" onmouseover="moveDialog()">Chắc chắn</button>
+        <div class="button-container">
+            <button onclick="correctAnswer()">Tôi nhầm</button>
+            <button id="moveButton" onmouseover="moveDialog()">Chắc chắn</button>
+        </div>
     </div>
-
 </body>
 </html>

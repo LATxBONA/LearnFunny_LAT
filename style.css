@@ -1,13 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 50px;
+    margin: 0;
     background: linear-gradient(to right, #ff9a9e, #fad0c4);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
+
 .dialog {
     position: fixed;
     top: 50%;
@@ -18,11 +20,18 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    transition: top 0.3s, left 0.3s;
-    width: 300px;
+    width: 320px;
     border: 2px solid #ff758c;
     animation: fadeIn 0.5s ease-in-out;
+    z-index: 1000;
 }
+
+.dialog p {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
 button {
     background: #ff758c;
     border: none;
@@ -32,15 +41,51 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    min-width: 100px;
 }
+
 button:hover {
     background: #ff527b;
+    transform: scale(1.05);
 }
+
+button:active {
+    transform: scale(0.95);
+}
+
 .hidden {
     display: none;
 }
+
+/* Animation khi xuất hiện */
 @keyframes fadeIn {
     from { opacity: 0; transform: translate(-50%, -60%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Styles cho mobile */
+@media (max-width: 480px) {
+    .dialog {
+        width: 280px;
+        padding: 20px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 8px;
+        font-size: 16px;
+    }
+}
+
+/* Style cho dialog thứ hai */
+#secondDialog {
+    transition: all 0.3s ease;
+}
+
+/* Đảm bảo dialog luôn nằm trong viewport */
+#secondDialog.dialog {
+    position: fixed;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
 }
